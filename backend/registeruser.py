@@ -21,7 +21,7 @@ def register_user(name):
         cap.release()
         return
     
-    file_path = f"../dataset/{name}.jpg"
+    file_path = f"dataset\{name}.jpg"
     cv2.imwrite(file_path, frame)
     cap.release()
     if os.path.exists(file_path):
@@ -35,7 +35,7 @@ def register_user(name):
         print("DeepFace encoding failed:", e)
         return
 
-    voter_db_path = "../dataset/voter_database.json"
+    voter_db_path = "dataset/voter_database.json"
 
     # Ensure the database file is initialized properly
     if not os.path.exists(voter_db_path) or os.stat(voter_db_path).st_size == 0:
